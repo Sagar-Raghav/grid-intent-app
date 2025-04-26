@@ -1,57 +1,57 @@
-Project Name: GridIntentApp
+PROJECT NAME: GridIntentApp
 
-Purpose & Core Functionality
+PURPOSE & CORE FUNCTIONALITY
 GridIntentApp is an Android application that demonstrates a simple, customizable grid of system intents (browser, dialer, maps, camera, email, SMS, settings, clock, calculator, YouTube, calendar) alongside a dark-mode toggle and a custom splash screen. It serves both as a reference for using implicit intents and as a learning scaffold for Material theming, custom animations, and resource-driven UI.
 
-Key Features
-Splash Screen
+KEY FEATURES
+1. Splash Screen
 
-Full-screen background image (loading_bg) with a horizontal progress bar and percentage text.
+      *Full-screen background image (loading_bg) with a horizontal progress bar and percentage text.
 
-Simulated loading from 0→100% before automatically launching the main UI.
+      *Simulated loading from 0→100% before automatically launching the main UI.
 
-Custom drawable (progress_cylindrical.xml) drives the progress bar visuals.
+      *Custom drawable (progress_cylindrical.xml) drives the progress bar visuals.
 
-Dark-Mode Support
+2. Dark-Mode Support
 
-A Switch in the toolbar area toggles between light and dark themes at runtime.
+      *A Switch in the toolbar area toggles between light and dark themes at runtime.
 
-Uses AppCompatDelegate and DayNight MaterialComponents theme to persist user preference in SharedPreferences.
+      *Uses AppCompatDelegate and DayNight MaterialComponents theme to persist user preference in SharedPreferences.
 
-Grid of Intents
+3.Grid of Intents
 
-An 11-item GridView populated by a CustomAdapter, each cell built from item_grid.xml (a MaterialCardView containing an icon + label).
+      *An 11-item GridView populated by a CustomAdapter, each cell built from item_grid.xml (a MaterialCardView containing an icon + label).
 
-Clicking a cell fires off the appropriate implicit or explicit intent (e.g., open browser, dial a number, launch Google Maps, start camera capture, etc.).
+      *Clicking a cell fires off the appropriate implicit or explicit intent (e.g., open browser, dial a number, launch Google Maps, start camera capture, etc.).
 
-Smooth “fade-and-scale” entry animation for each grid item (fade_in_scale.xml) plus an optional click-scale effect (click_scale.xml).
+      *Smooth “fade-and-scale” entry animation for each grid item (fade_in_scale.xml) plus an optional click-scale effect (click_scale.xml).
 
-Material Theming & Styling
+4.Material Theming & Styling
 
-Theme.GridIntentApp inherits from Theme.MaterialComponents.DayNight.DarkActionBar for consistent Material look-and-feel.
+      *Theme.GridIntentApp inherits from Theme.MaterialComponents.DayNight.DarkActionBar for consistent Material look-and-feel.
 
-Centralized widget styles in themes.xml for cards (Widget.GridIntentApp.CardView) and progress bars (Widget.GridIntentApp.ProgressBar).
+      *Centralized widget styles in themes.xml for cards (Widget.GridIntentApp.CardView) and progress bars (Widget.GridIntentApp.ProgressBar).
 
-Semantic color attributes (colorPrimary, colorSecondary, colorSurfaceVariant, etc.) defined in colors.xml and applied throughout.
+      *Semantic color attributes (colorPrimary, colorSecondary, colorSurfaceVariant, etc.) defined in colors.xml and applied throughout.
 
-Dimensional resources in dimens.xml and text in strings.xml for full resource-driven adaptability (localization, device scaling).
+      *Dimensional resources in dimens.xml and text in strings.xml for full resource-driven adaptability (localization, device scaling).
 
-Resource Organization
+5.Resource Organization
 
-Layouts:
+      *Layouts:
 
-activity_splash.xml (FrameLayout + centered LinearLayout)
+         --activity_splash.xml (FrameLayout + centered LinearLayout)
 
-activity_main.xml (LinearLayout → MaterialToolbar, toggle row, GridView)
+         --activity_main.xml (LinearLayout → MaterialToolbar, toggle row, GridView)
 
-item_grid.xml (MaterialCardView wrapper for each grid cell)
+         --item_grid.xml (MaterialCardView wrapper for each grid cell)
 
-Drawables & Animations:
+      *Drawables & Animations:
 
-progress_cylindrical.xml (layer-list for horizontal ProgressBar)
+         --progress_cylindrical.xml (layer-list for horizontal ProgressBar)
 
-fade_in_scale.xml & click_scale.xml for view animations
+         --fade_in_scale.xml & click_scale.xml for view animations
 
-Manifest:
+      *Manifest:
 
-Declares SplashActivity as the LAUNCHER, MainActivity as exported activities, and references backup/data-extraction rules.
+         --Declares SplashActivity as the LAUNCHER, MainActivity as exported activities, and references backup/data-extraction rules.
