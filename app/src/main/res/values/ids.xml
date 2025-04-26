@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="themeSwitch" type="id" />
+    <item name="gridText" type="id" />
+    <item name="gridImage" type="id" />
+</resources>
